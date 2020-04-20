@@ -1,0 +1,47 @@
+POST http://localhost:8080/createNewUser
+Content-Type: application/json
+
+{
+  "userId":"ABC122XYZ",
+  "sessionId":"XYZ456ABC",
+  "actions":[
+    {
+      "time":"2018-10-18T21:37:28-06:00",
+      "type":"CLICK"
+    },
+    {
+      "time":"2018-10-18T21:37:30-06:00",
+      "type":"VIEW"
+    },
+    {
+      "time":"2018-10-18T21:37:30-06:00",
+      "type":"NAVIGATE"
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/getUser
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/getUser?userId=ABC123XYZ&type=VIEW
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/getUser?userId=ABC1289XYZ
+Content-Type: application/json
+
+
+###
+GET http://localhost:8080/getUser?type=VIEW
+Content-Type: application/json
+
+
+###
+//could not make the filter with time work
+
+GET http://localhost:8080/getUser?type=VIEW&time=2018-10-18T21:37:28-06:00
+Content-Type: application/json
